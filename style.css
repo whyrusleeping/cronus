@@ -1,0 +1,82 @@
+.dark-primary-color    { background: #0288D1; }
+.default-primary-color { background: #03A9F4; }
+.light-primary-color   { background: #B3E5FC; }
+.text-primary-color    { color: #FFFFFF; }
+.accent-color          { background: #FFC107; }
+.primary-text-color    { color: #212121; }
+.secondary-text-color  { color: #727272; }
+.divider-color         { border-color: #B6B6B6; }
+
+body {
+	color: #212121;
+	font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-weight: 300;
+	background: #000000;
+}
+
+.bgdiv {
+	top: 0;
+	left: 0;
+	margin: 0;
+	height: 200px;
+	position: fixed;
+	background: #0288D1;
+	width: 100%;
+	z-index: -1;
+}
+
+.titlediv {
+	top: 20px;
+	left: 10px;
+	margin: 0;
+	position: fixed;
+	width: 100%;
+}
+
+.main {
+	background: #03A9F4;
+	width: 900px;
+	height: 90%;
+	padding: 10px;
+	margin-top: 100px;
+	margin-left: auto;
+	margin-right: auto;
+	border-radius: 3px;
+	box-shadow: 0 rem(2) rem(5) 0 rgba(0, 0, 0, 0.25);
+}
+
+.main h1 {
+	text-align: center;
+}
+
+.main table {
+	width: 100%;
+}
+
+
+.round-button {
+	width: 100px;
+}
+
+.round-button-circle {
+	width: 60px;
+	height:30px;
+	padding-bottom: 30px;
+    border-radius: 150px;
+    overflow:hidden;
+	text-align: center;
+    
+    background: #FFC107; 
+    box-shadow: 0 0 8px gray;
+}
+
+.round-button-circle h1 {
+	border: none;
+	margin: 0;
+	padding-top: 13px;
+	padding-left: 3px;
+}
+
+.round-button-circle:hover {
+	background:#30588e;
+}
