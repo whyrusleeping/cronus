@@ -30,7 +30,7 @@
     "react-dom": "^0.14.3",
     "redux": "^3.0.4",
     "redux-thunk": "^1.0.0",
-    "request": "^2.67.0"
+    "yaku": "^0.11.4"
   },
   "devDependencies": {
     "babel-core": "^6.2.1",

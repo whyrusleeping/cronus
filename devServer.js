@@ -14,9 +14,6 @@ var passthrough = url.parse('http://localhost:8080/');
 passthrough.headers = {'referer': 'https://localhost:8080'};
 passthrough.cookieRewrite = true;
 
-// Pass through request to the API and ipfs
-app.use('/ipfs', proxy(passthrough));
-app.use('/api', proxy(passthrough));
 
 // magic
 app.use(require('webpack-dev-middleware')(compiler, {
@@ -29,6 +26,9 @@ app.use(require('webpack-hot-middleware')(compiler));
 app.get('/', function(req, res) {
     res.sendFile(path.join(__dirname, 'index.html'));
 });
+
+// Pass through request to the API and ipfs
+app.use('/', proxy(passthrough));
 
 app.listen(3000, 'localhost', function(err) {
     if (err) {
