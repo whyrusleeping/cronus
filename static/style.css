@@ -1,3 +1,5 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,300,500);
+
 .dark-primary-color    { background: #0288D1; }
 .default-primary-color { background: #03A9F4; }
 .light-primary-color   { background: #B3E5FC; }
@@ -10,8 +12,9 @@
 body {
 	color: #212121;
 	font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
-    font-weight: 300;
+	font-weight: 300;
 	background: #000000;
+	color: #ccc;
 }
 
 .bgdiv {
@@ -79,12 +82,11 @@ hr {
 	width: 60px;
 	height:30px;
 	padding-bottom: 30px;
-    border-radius: 150px;
-    overflow:hidden;
+	border-radius: 150px;
+	overflow:hidden;
 	text-align: center;
-    
-    background: #FFC107; 
-    box-shadow: 0 0 8px gray;
+	background: #FFC107;
+	box-shadow: 0 0 8px gray;
 }
 
 .round-button-circle h1 {
