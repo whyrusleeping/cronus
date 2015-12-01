@@ -30,13 +30,46 @@
 					}
 				}
 
-
 				var song = window.location.hash
 				if (song.length === 0) {
 					document.getElementById("wave").innerHTML = "No song specified"
 					return
 				}
 				song = song.slice(1)
+
+				var HttpClient = function() {
+					this.get = function(aUrl, aCallback) {
+						var anHttpRequest = new XMLHttpRequest();
+						anHttpRequest.onreadystatechange = function() {
+							if (anHttpRequest.readyState == 4 && anHttpRequest.status == 200)
+								aCallback(anHttpRequest.responseText);
+						}
+
+						anHttpRequest.open( "GET", aUrl, true );
+						anHttpRequest.send( null );
+					}
+				}
+
+				aClient = new HttpClient();
+				aClient.get("http://localhost:5001/api/v0/ls?arg=QmNuW2NBaUyNU4yAdpC2eCxYA6RPAKbzbXpuBdQBdoQVgs&stream-channels=true", function(response) {
+					dirObj = JSON.parse(response)
+					console.log(dirObj.Objects)
+					var links = dirObj.Objects[0].Links
+					for (var i in links) {
+						var urlBld = "http://localhost:5001/api/v0/cat/"+links[i].Hash
+						wavesurfer.load(urlBld)
+							console.log(urlBld)
+							ID3.loadTags(urlBld, function() {
+								var tags = ID3.getAllTags(urlBld);
+								alert(tags.artist + " - " + tags.title + ", " + tags.album);
+								songtitle = document.getElementById("songname")
+									songtitle.innerHTML=tags.title + " - " + tags.artist
+									title = tags.title
+									artist = tags.artist
+							});
+					}
+				});
+
 
 				wavesurfer.load(song)
 				ID3.loadTags(song, function() {
